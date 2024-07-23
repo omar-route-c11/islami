@@ -32,6 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       child: Scaffold(
+        appBar: AppBar(
+          title: Text('إسلامي'),
+        ),
         body: tabs[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex,

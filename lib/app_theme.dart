@@ -9,12 +9,33 @@ class AppTheme {
 
   static ThemeData lightTheme = ThemeData(
     primaryColor: lightPrimary,
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.transparent,
+      titleTextStyle: TextStyle(
+        fontSize: 30,
+        fontWeight: FontWeight.bold,
+        color: black,
+      ),
+      centerTitle: true,
+    ),
     scaffoldBackgroundColor: Colors.transparent,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
       backgroundColor: lightPrimary,
       unselectedItemColor: white,
       selectedItemColor: black,
+    ),
+    textTheme: TextTheme(
+      headlineSmall: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.w400,
+        color: black,
+      ),
+      titleLarge: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w400,
+        color: black,
+      ),
     ),
   );
 
