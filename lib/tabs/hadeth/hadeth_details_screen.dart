@@ -10,11 +10,13 @@ class HadethDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Hadeth hadeth = ModalRoute.of(context)!.settings.arguments as Hadeth;
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
+
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
-            Provider.of<SettingsProvider>(context).backgroundImagePath,
+            settingsProvider.backgroundImagePath,
           ),
           fit: BoxFit.cover,
         ),
@@ -30,9 +32,8 @@ class HadethDetailsScreen extends StatelessWidget {
             horizontal: MediaQuery.of(context).size.width * 0.07,
           ),
           decoration: BoxDecoration(
-            color: Provider.of<SettingsProvider>(context).isDark
-                ? AppTheme.darkPrimary
-                : AppTheme.white,
+            color:
+                settingsProvider.isDark ? AppTheme.darkPrimary : AppTheme.white,
             borderRadius: BorderRadius.circular(25),
           ),
           child: ListView.builder(
